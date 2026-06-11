@@ -7,7 +7,7 @@ from .fixtures import (
 
 
 def test_text_data_parses_non_english_story_text_into_paragraphs_sentences_and_words():
-    """Test that text data parses non-English story text into paragraphs, sentences, and words."""
+    """Text data parses story text into paragraphs, sentences, and words."""
     settings = create_bantu_like_settings()
     text_data = text_data_from_paragraphs(
         settings,
@@ -45,7 +45,7 @@ def test_text_data_can_build_a_word_list_preserving_duplicate_tokens():
 
 
 def test_text_data_can_build_a_word_list_with_duplicate_display_words_removed():
-    """Test that text data can build a word list with duplicate display words removed."""
+    """Text data builds a word list with duplicate display words removed."""
     settings = create_bantu_like_settings()
     text_data = text_data_from_paragraphs(settings, "mbata ngoma mbata.")
     word_list = text_data.build_word_list_with_no_duplicates()

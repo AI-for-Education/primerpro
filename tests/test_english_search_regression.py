@@ -41,7 +41,7 @@ def test_english_buildable_search_models_an_early_short_vowel_teaching_stage():
 
 
 def test_english_buildable_search_models_later_digraph_and_vowel_team_stage():
-    """Test that buildable search models a later digraph and vowel team teaching stage."""
+    """Buildable search models a later digraph and vowel-team stage."""
     settings = create_english_settings()
     word_list = word_list_from_words(
         settings,

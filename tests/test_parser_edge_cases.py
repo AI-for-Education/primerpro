@@ -64,7 +64,7 @@ def test_text_data_pins_sentence_boundary_edge_cases():
 
 
 def test_spanish_style_fixture_pins_unicode_graphemes_with_accents_and_enye():
-    """Test that Spanish style fixture correctly handles Unicode graphemes with accents and enye."""
+    """Spanish fixture handles Unicode graphemes with accents and enye."""
     settings = create_spanish_like_settings()
 
     assert grapheme_symbols(Word("niño", settings)) == ["n", "i", "ñ", "o"]

@@ -4,7 +4,7 @@ from .fixtures import create_bantu_like_settings, taught
 
 
 def test_word_is_buildable_when_every_syllable_grapheme_is_taught_exactly():
-    """Test that a word is buildable when every syllable grapheme is in the taught list."""
+    """A word is buildable when each syllable grapheme is taught."""
     settings = create_bantu_like_settings()
     word = Word("mbata", settings)
 
@@ -12,7 +12,7 @@ def test_word_is_buildable_when_every_syllable_grapheme_is_taught_exactly():
 
 
 def test_word_is_not_buildable_when_any_grapheme_is_untaught():
-    """Test that a word is not buildable when any grapheme is missing from the taught list."""
+    """A word is not buildable when any grapheme is untaught."""
     settings = create_bantu_like_settings()
     word = Word("mbata", settings)
 
@@ -20,7 +20,7 @@ def test_word_is_not_buildable_when_any_grapheme_is_untaught():
 
 
 def test_initial_underscore_convention_allows_syllable_initial_graphemes_only():
-    """Test that initial underscore convention (t_) only matches syllable-initial positions."""
+    """Initial marker t_ only matches syllable-initial positions."""
     settings = create_bantu_like_settings()
     initial = Word("ta", settings)
     medial = Syllable("ata", settings)
@@ -31,7 +31,7 @@ def test_initial_underscore_convention_allows_syllable_initial_graphemes_only():
 
 
 def test_final_underscore_convention_allows_syllable_final_graphemes_only():
-    """Test that final underscore convention (_t) only matches syllable-final positions."""
+    """Final marker _t only matches syllable-final positions."""
     settings = create_bantu_like_settings()
     final = Word("at", settings)
     initial = Word("ta", settings)
@@ -50,7 +50,7 @@ def test_position_markers_are_evaluated_per_syllable_not_only_per_word():
 
 
 def test_grapheme_taught_order_missing_check_strips_positional_underscores():
-    """Test that missing grapheme check strips positional underscores from taught graphemes."""
+    """Missing-grapheme checks strip positional underscores."""
     settings = create_bantu_like_settings()
     graphemes_taught = GraphemeTaughtOrder(settings)
     graphemes_taught.add_grapheme("t_")

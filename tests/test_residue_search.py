@@ -9,7 +9,7 @@ from .fixtures import (
 
 
 def test_residue_search_counts_words_that_are_not_buildable_from_taught_graphemes():
-    """Test that residue search counts words that are not buildable from taught graphemes."""
+    """Residue search counts words blocked by untaught graphemes."""
     settings = create_bantu_like_settings()
     text_data = text_data_from_paragraphs(settings, "mbata ngoma kaana.")
     search = ResidueSearch(1, settings)

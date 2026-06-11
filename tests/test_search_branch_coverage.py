@@ -8,7 +8,7 @@ from .fixtures import (
 
 
 def test_minimal_pair_search_returns_without_inventory_or_target_graphemes() -> None:
-    """Test that minimal pair search returns empty results without inventory or target graphemes."""
+    """Minimal-pair search handles missing inventory or targets."""
     no_inventory = Settings()
     search = MinPairsSearch(0, no_inventory)
     word_list = word_list_from_words(create_english_settings(), "cat")
@@ -27,7 +27,7 @@ def test_minimal_pair_search_returns_without_inventory_or_target_graphemes() -> 
 
 
 def test_tone_pair_search_returns_without_inventory_or_target_tone() -> None:
-    """Test that tone pair search returns empty results without inventory or target tone."""
+    """Tone-pair search handles missing inventory or target tone."""
     no_inventory = Settings()
     search = TonePairsSearch(0, no_inventory)
     search.execute_tone_pairs_search(word_list_from_words(create_tone_settings(), "má"))

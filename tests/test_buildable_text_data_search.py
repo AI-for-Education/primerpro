@@ -9,7 +9,7 @@ from .fixtures import (
 
 
 def test_buildable_text_data_search_lists_buildable_words_from_story_text():
-    """Test that buildable text data search lists only buildable words from story text."""
+    """Text-data buildable search lists only buildable story words."""
     settings = create_english_settings()
     text_data = text_data_from_paragraphs(settings, "sat ship queen. mat chain.")
     search = BuildableWordSearchTD(1, settings)

@@ -65,7 +65,7 @@ def test_inventory_accessors_and_marker_fallbacks_cover_grapheme_types() -> None
 
 
 def test_word_and_syllable_bounds_and_minimal_pair_length_mismatches() -> None:
-    """Test that word and syllable bounds and minimal pair length mismatches are handled correctly."""
+    """Word and syllable bounds handle minimal-pair length mismatches."""
     settings = create_english_settings()
     short = Word("at", settings)
     longer = Word("cat", settings)
@@ -124,7 +124,7 @@ def test_paragraph_sentence_and_text_data_empty_paths() -> None:
 
 
 def test_word_list_taught_order_and_sight_word_mutation_paths() -> None:
-    """Test that word list, taught order, and sight word mutation paths work correctly."""
+    """Word list, taught order, and sight-word mutation paths work."""
     settings = create_english_settings()
     word_list = WordList(settings)
     first = Word("cat", settings)
@@ -168,7 +168,7 @@ def test_word_list_taught_order_and_sight_word_mutation_paths() -> None:
 
 
 def test_cleaning_fallback_decomposition_and_counting_edges() -> None:
-    """Test that cleaning, fallback decomposition, and counting edge cases work correctly."""
+    """Cleaning, fallback decomposition, and counting edges work."""
     settings = create_settings(["b"], ["a"])
     settings.option_settings.import_ignore_chars = "#"
 

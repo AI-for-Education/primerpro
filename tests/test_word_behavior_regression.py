@@ -20,7 +20,7 @@ def test_word_auto_syllabification_for_ata_is_pinned_explicitly():
 
 
 def test_word_exposes_cv_shape_and_stored_cv_pattern_from_decomposed_graphemes():
-    """Test that word exposes CV shape and stored CV pattern from decomposed graphemes."""
+    """Word exposes CV shape and stored pattern from decomposed graphemes."""
     settings = create_english_settings()
     word = Word("ship", settings)
 
@@ -55,7 +55,7 @@ def test_syllable_medial_query_matches_inside_multigraphs():
 
 
 def test_word_highlight_helpers_wrap_whole_words_when_target_graphemes_are_present():
-    """Test that word highlight helpers wrap whole words when target graphemes are present."""
+    """Word highlight helpers wrap words when target graphemes are present."""
     settings = create_english_settings()
     word = Word("ship", settings)
     graphemes = taught("th", "sh")

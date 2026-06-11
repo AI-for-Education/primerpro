@@ -9,7 +9,7 @@ from .fixtures import (
 
 
 def test_spanish_style_inventory_decomposes_ch_ll_rr_qu_and_gu_as_graphemes():
-    """Test that Spanish style inventory decomposes ch, ll, rr, qu, and gu as graphemes."""
+    """Spanish inventory decomposes ch, ll, rr, qu, and gu."""
     settings = create_spanish_like_settings()
 
     assert_word(settings, "queso", ["qu", "e", "s", "o"])
@@ -85,7 +85,7 @@ def test_spanish_style_staged_decodability_handles_qu_ch_ll_rr_and_gu():
 
 
 def test_spanish_style_text_data_counts_story_structure_and_unique_words():
-    """Test that Spanish style text data counts story structure and unique words correctly."""
+    """Spanish text data counts story structure and unique words."""
     settings = create_spanish_like_settings()
     text_data = text_data_from_paragraphs(
         settings,

@@ -23,7 +23,7 @@ def test_minimal_pair_search_reports_targeted_vowel_contrasts():
 
 
 def test_minimal_pair_search_checks_requested_order_even_when_sort_order_differs():
-    """Test that minimal pair search checks requested order even when sort order differs."""
+    """Minimal-pair search checks requested order despite sort order."""
     settings = create_english_settings()
     word_list = word_list_from_words(settings, "bat", "pat")
     search = MinPairsSearch(0, settings)
@@ -38,7 +38,7 @@ def test_minimal_pair_search_checks_requested_order_even_when_sort_order_differs
 
 
 def test_tone_chart_search_reports_configured_tones_levels_and_tone_bearing_units():
-    """Test that tone chart search reports configured tones, levels, and tone bearing units."""
+    """Tone chart search reports tones, levels, and bearing units."""
     settings = create_tone_settings()
     search = ToneChartSearch(0, settings)
 

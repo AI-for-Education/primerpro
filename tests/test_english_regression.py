@@ -9,7 +9,7 @@ from .fixtures import (
 
 
 def test_english_inventory_decomposes_common_consonant_digraphs_and_vowel_teams():
-    """Test that English inventory correctly decomposes common consonant digraphs and vowel teams."""
+    """English inventory decomposes digraphs and vowel teams."""
     settings = create_english_settings()
 
     assert_word(settings, "ship", ["sh", "i", "p"])
@@ -49,7 +49,7 @@ def test_english_punctuation_and_apostrophes_are_removed_before_decomposition():
 
 
 def test_english_decodability_requires_taught_multigraphs_rather_than_components():
-    """Test that decodability requires taught multigraphs rather than their component letters."""
+    """Decodability requires taught multigraphs, not components."""
     settings = create_english_settings()
     ship = Word("ship", settings)
     queen = Word("queen", settings)
@@ -61,7 +61,7 @@ def test_english_decodability_requires_taught_multigraphs_rather_than_components
 
 
 def test_english_staged_decodability_handles_vowel_teams_and_consonant_digraphs():
-    """Test that staged decodability correctly handles vowel teams and consonant digraphs."""
+    """Staged decodability handles vowel teams and digraphs."""
     settings = create_english_settings()
     short_vowels = taught("s", "a", "t", "m", "p", "i", "n")
     digraphs = taught("s", "a", "t", "m", "p", "i", "n", "sh", "ch", "th", "ck")
@@ -102,7 +102,7 @@ def test_english_final_position_marker_can_model_final_ck():
 
 
 def test_english_text_data_counts_paragraphs_sentences_words_and_unique_display_words():
-    """Test that text data correctly counts paragraphs, sentences, words, and unique words."""
+    """Text data counts paragraphs, sentences, words, and unique words."""
     settings = create_english_settings()
     text_data = text_data_from_paragraphs(
         settings,

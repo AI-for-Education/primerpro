@@ -8,7 +8,7 @@ from .fixtures import (
 
 
 def test_word_uses_longest_match_grapheme_decomposition_for_multigraph_consonants():
-    """Test that word uses longest match grapheme decomposition for multigraph consonants."""
+    """Word uses longest-match decomposition for multigraph consonants."""
     settings = create_bantu_like_settings()
     word = Word("mbata", settings)
 
@@ -34,7 +34,7 @@ def test_word_canonicalizes_uppercase_inventory_matches_to_inventory_symbols():
 
 
 def test_explicit_syllable_breaks_are_preserved_while_display_word_removes_dots():
-    """Test that explicit syllable breaks are preserved while display word removes dots."""
+    """Explicit syllable breaks remain while display words drop dots."""
     settings = create_bantu_like_settings()
     word = Word("mba.ta", settings)
 
