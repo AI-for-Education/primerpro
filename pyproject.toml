@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "primerpro"
+version = "0.1.0"
+description = "Python port of PrimerPro decodability objects and searches for primer development"
+readme = "README.md"
+requires-python = ">=3.13"
+license = {text = "MIT"}
+authors = [
+    {name = "Moritz Boos", email = "moritz.boos@fabinc.co.uk"},
+]
+maintainers = [
+    {name = "Moritz Boos", email = "moritz.boos@fabinc.co.uk"},
+]
+keywords = [
+    "literacy",
+    "phonics",
+    "decodability",
+    "primer-development",
+    "education",
+    "reading",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Education",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/AI-for-Education/primerpro"
+Repository = "https://github.com/AI-for-Education/primerpro"
+Issues = "https://github.com/AI-for-Education/primerpro/issues"
+Changelog = "https://github.com/AI-for-Education/primerpro/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=5.0.0",
+    "ruff>=0.6.0",
+]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP"]
