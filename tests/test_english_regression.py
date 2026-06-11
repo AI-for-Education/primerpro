@@ -9,6 +9,7 @@ from .fixtures import (
 
 
 def test_english_inventory_decomposes_common_consonant_digraphs_and_vowel_teams():
+    """Test that English inventory correctly decomposes common consonant digraphs and vowel teams."""
     settings = create_english_settings()
 
     assert_word(settings, "ship", ["sh", "i", "p"])
@@ -22,6 +23,7 @@ def test_english_inventory_decomposes_common_consonant_digraphs_and_vowel_teams(
 
 
 def test_english_inventory_prefers_longest_graphemes():
+    """Test that English inventory prefers longest grapheme matches."""
     settings = create_english_settings()
 
     assert_word(settings, "check", ["ch", "e", "ck"])
@@ -30,6 +32,7 @@ def test_english_inventory_prefers_longest_graphemes():
 
 
 def test_english_uppercase_multigraphs_are_exact():
+    """Test that uppercase English multigraphs require exact casing."""
     settings = create_english_settings()
 
     assert grapheme_symbols(Word("SHip", settings)) == ["sh", "i", "p"]
@@ -37,6 +40,7 @@ def test_english_uppercase_multigraphs_are_exact():
 
 
 def test_english_punctuation_and_apostrophes_are_removed_before_decomposition():
+    """Test that punctuation and apostrophes are removed before word decomposition."""
     settings = create_english_settings()
     word = Word('"Sam\'s!"', settings)
 
@@ -45,6 +49,7 @@ def test_english_punctuation_and_apostrophes_are_removed_before_decomposition():
 
 
 def test_english_decodability_requires_taught_multigraphs_rather_than_components():
+    """Test that decodability requires taught multigraphs rather than their component letters."""
     settings = create_english_settings()
     ship = Word("ship", settings)
     queen = Word("queen", settings)
@@ -56,6 +61,7 @@ def test_english_decodability_requires_taught_multigraphs_rather_than_components
 
 
 def test_english_staged_decodability_handles_vowel_teams_and_consonant_digraphs():
+    """Test that staged decodability correctly handles vowel teams and consonant digraphs."""
     settings = create_english_settings()
     short_vowels = taught("s", "a", "t", "m", "p", "i", "n")
     digraphs = taught("s", "a", "t", "m", "p", "i", "n", "sh", "ch", "th", "ck")
@@ -85,6 +91,7 @@ def test_english_staged_decodability_handles_vowel_teams_and_consonant_digraphs(
 
 
 def test_english_final_position_marker_can_model_final_ck():
+    """Test that final position marker can correctly model final ck."""
     settings = create_english_settings()
     back = Word("back", settings)
     initial = Syllable("ckab", settings)
@@ -95,6 +102,7 @@ def test_english_final_position_marker_can_model_final_ck():
 
 
 def test_english_text_data_counts_paragraphs_sentences_words_and_unique_display_words():
+    """Test that text data correctly counts paragraphs, sentences, words, and unique words."""
     settings = create_english_settings()
     text_data = text_data_from_paragraphs(
         settings,
@@ -110,6 +118,7 @@ def test_english_text_data_counts_paragraphs_sentences_words_and_unique_display_
 
 
 def test_english_frequency_counts_use_decomposed_multigraph_graphemes():
+    """Test that frequency counts use decomposed multigraph graphemes."""
     settings = create_english_settings()
     text_data = text_data_from_paragraphs(
         settings,

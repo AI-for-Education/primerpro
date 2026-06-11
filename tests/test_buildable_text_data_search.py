@@ -9,6 +9,7 @@ from .fixtures import (
 
 
 def test_buildable_text_data_search_lists_buildable_words_from_story_text():
+    """Test that buildable text data search lists only buildable words from story text."""
     settings = create_english_settings()
     text_data = text_data_from_paragraphs(settings, "sat ship queen. mat chain.")
     search = BuildableWordSearchTD(1, settings)
@@ -26,6 +27,7 @@ def test_buildable_text_data_search_lists_buildable_words_from_story_text():
 
 
 def test_buildable_text_data_search_can_remove_duplicate_display_words():
+    """Test that buildable text data search can remove duplicate display words."""
     settings = create_english_settings()
     text_data = text_data_from_paragraphs(settings, "sat ship sat. ship mat.")
     search = BuildableWordSearchTD(1, settings)
@@ -42,6 +44,7 @@ def test_buildable_text_data_search_can_remove_duplicate_display_words():
 
 
 def test_buildable_text_data_paragraph_format_highlights_buildable_words_in_context():
+    """Test that paragraph format highlights buildable words within their context."""
     settings = create_english_settings()
     text_data = text_data_from_paragraphs(settings, "sat queen ship.")
     search = BuildableWordSearchTD(1, settings)

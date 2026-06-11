@@ -10,6 +10,7 @@ from .fixtures import (
 
 
 def test_spanish_style_buildable_search_models_a_qu_and_ch_teaching_stage():
+    """Test that Spanish style buildable search models a qu and ch teaching stage."""
     settings = create_spanish_like_settings()
     word_list = word_list_from_words(
         settings,
@@ -38,6 +39,7 @@ def test_spanish_style_buildable_search_models_a_qu_and_ch_teaching_stage():
 
 
 def test_spanish_style_buildable_search_models_a_full_multigraph_teaching_stage():
+    """Test that Spanish style buildable search models a full multigraph teaching stage."""
     settings = create_spanish_like_settings()
     word_list = word_list_from_words(
         settings,
@@ -76,6 +78,7 @@ def test_spanish_style_buildable_search_models_a_full_multigraph_teaching_stage(
 
 
 def test_spanish_style_residue_search_reports_words_blocked_by_ll_rr_and_gu():
+    """Test that Spanish style residue search reports words blocked by ll, rr, and gu."""
     settings = create_spanish_like_settings()
     text_data = text_data_from_paragraphs(
         settings,
@@ -96,6 +99,7 @@ def test_spanish_style_residue_search_reports_words_blocked_by_ll_rr_and_gu():
 
 
 def test_spanish_style_residue_search_can_ignore_an_untaught_sight_word():
+    """Test that Spanish style residue search can ignore an untaught sight word."""
     settings = create_spanish_like_settings()
     settings.sight_words.add_word("llama")
     text_data = text_data_from_paragraphs(settings, "llama queso.")

@@ -8,6 +8,7 @@ from .fixtures import (
 
 
 def test_word_uses_longest_match_grapheme_decomposition_for_multigraph_consonants():
+    """Test that word uses longest match grapheme decomposition for multigraph consonants."""
     settings = create_bantu_like_settings()
     word = Word("mbata", settings)
 
@@ -16,6 +17,7 @@ def test_word_uses_longest_match_grapheme_decomposition_for_multigraph_consonant
 
 
 def test_word_uses_longest_match_grapheme_decomposition_for_long_vowels():
+    """Test that word uses longest match grapheme decomposition for long vowels."""
     settings = create_bantu_like_settings()
     word = Word("kaana", settings)
 
@@ -23,6 +25,7 @@ def test_word_uses_longest_match_grapheme_decomposition_for_long_vowels():
 
 
 def test_word_canonicalizes_uppercase_inventory_matches_to_inventory_symbols():
+    """Test that word canonicalizes uppercase inventory matches to inventory symbols."""
     settings = create_bantu_like_settings()
     word = Word("MBata", settings)
 
@@ -31,6 +34,7 @@ def test_word_canonicalizes_uppercase_inventory_matches_to_inventory_symbols():
 
 
 def test_explicit_syllable_breaks_are_preserved_while_display_word_removes_dots():
+    """Test that explicit syllable breaks are preserved while display word removes dots."""
     settings = create_bantu_like_settings()
     word = Word("mba.ta", settings)
 
@@ -41,6 +45,7 @@ def test_explicit_syllable_breaks_are_preserved_while_display_word_removes_dots(
 
 
 def test_punctuation_configured_as_general_or_ending_punctuation_is_removed():
+    """Test that punctuation configured as general or ending punctuation is removed."""
     settings = create_bantu_like_settings()
     word = Word('"ngoma,"', settings)
 

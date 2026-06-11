@@ -11,6 +11,7 @@ from .fixtures import (
 
 
 def test_word_handles_empty_input_and_punctuation_only_input():
+    """Test that word handles empty input and punctuation-only input correctly."""
     settings = create_english_settings()
 
     assert Word("", settings).grapheme_count() == 0
@@ -19,6 +20,7 @@ def test_word_handles_empty_input_and_punctuation_only_input():
 
 
 def test_word_handles_a_single_grapheme_input():
+    """Test that word handles a single grapheme input correctly."""
     settings = create_english_settings()
     word = Word("a", settings)
 
@@ -27,6 +29,7 @@ def test_word_handles_a_single_grapheme_input():
 
 
 def test_word_parser_honors_max_size_grapheme_boundary():
+    """Test that word parser honors maximum size grapheme boundary."""
     settings = create_english_settings()
 
     assert grapheme_symbols(Word("night", settings)) == ["n", "igh", "t"]
@@ -41,6 +44,7 @@ def test_word_parser_honors_max_size_grapheme_boundary():
 
 
 def test_word_parser_uses_longest_match_for_overlapping_multigraphs():
+    """Test that word parser uses longest match for overlapping multigraphs."""
     settings = create_overlapping_grapheme_settings()
 
     assert grapheme_symbols(Word("nga", settings)) == ["nga"]
@@ -48,6 +52,7 @@ def test_word_parser_uses_longest_match_for_overlapping_multigraphs():
 
 
 def test_text_data_pins_sentence_boundary_edge_cases():
+    """Test that text data correctly handles sentence boundary edge cases."""
     settings = create_english_settings()
     no_terminator = text_data_from_paragraphs(settings, "ship queen")
     repeated_terminators = text_data_from_paragraphs(settings, "ship?! queen... night")
@@ -59,6 +64,7 @@ def test_text_data_pins_sentence_boundary_edge_cases():
 
 
 def test_spanish_style_fixture_pins_unicode_graphemes_with_accents_and_enye():
+    """Test that Spanish style fixture correctly handles Unicode graphemes with accents and enye."""
     settings = create_spanish_like_settings()
 
     assert grapheme_symbols(Word("niño", settings)) == ["n", "i", "ñ", "o"]
@@ -66,6 +72,7 @@ def test_spanish_style_fixture_pins_unicode_graphemes_with_accents_and_enye():
 
 
 def test_english_fixture_exercises_all_configured_extra_graphemes():
+    """Test that English fixture exercises all configured extra graphemes."""
     settings = create_english_settings()
 
     assert grapheme_symbols(Word("day", settings)) == ["d", "ay"]
@@ -83,6 +90,7 @@ def test_english_fixture_exercises_all_configured_extra_graphemes():
 
 
 def test_spanish_style_fixture_exercises_standalone_q_separately_from_qu():
+    """Test that Spanish style fixture exercises standalone q separately from qu."""
     settings = create_spanish_like_settings()
 
     assert grapheme_symbols(Word("qa", settings)) == ["q", "a"]

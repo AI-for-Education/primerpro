@@ -10,6 +10,7 @@ from .fixtures import (
 
 
 def test_english_buildable_search_models_an_early_short_vowel_teaching_stage():
+    """Test that buildable search models an early short vowel teaching stage."""
     settings = create_english_settings()
     word_list = word_list_from_words(
         settings,
@@ -40,6 +41,7 @@ def test_english_buildable_search_models_an_early_short_vowel_teaching_stage():
 
 
 def test_english_buildable_search_models_later_digraph_and_vowel_team_stage():
+    """Test that buildable search models a later digraph and vowel team teaching stage."""
     settings = create_english_settings()
     word_list = word_list_from_words(
         settings,
@@ -105,6 +107,7 @@ def test_english_buildable_search_models_later_digraph_and_vowel_team_stage():
 
 
 def test_english_residue_search_reports_words_blocked_by_untaught_multigraphs():
+    """Test that residue search reports words blocked by untaught multigraphs."""
     settings = create_english_settings()
     text_data = text_data_from_paragraphs(settings, "sat ship queen night beach.")
     search = ResidueSearch(1, settings)
@@ -121,6 +124,7 @@ def test_english_residue_search_reports_words_blocked_by_untaught_multigraphs():
 
 
 def test_english_residue_search_can_ignore_an_untaught_sight_word():
+    """Test that residue search can ignore an untaught sight word."""
     settings = create_english_settings()
     settings.sight_words.add_word("the")
     text_data = text_data_from_paragraphs(settings, "the ship.")

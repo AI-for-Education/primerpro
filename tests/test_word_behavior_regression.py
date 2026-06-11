@@ -11,6 +11,7 @@ from .fixtures import (
 
 
 def test_word_auto_syllabification_for_ata_is_pinned_explicitly():
+    """Test that word auto-syllabification for ata is pinned explicitly."""
     settings = create_bantu_like_settings()
     word = Word("ata", settings)
 
@@ -19,6 +20,7 @@ def test_word_auto_syllabification_for_ata_is_pinned_explicitly():
 
 
 def test_word_exposes_cv_shape_and_stored_cv_pattern_from_decomposed_graphemes():
+    """Test that word exposes CV shape and stored CV pattern from decomposed graphemes."""
     settings = create_english_settings()
     word = Word("ship", settings)
 
@@ -27,6 +29,7 @@ def test_word_exposes_cv_shape_and_stored_cv_pattern_from_decomposed_graphemes()
 
 
 def test_word_syllable_position_queries_report_expected_positions():
+    """Test that word syllable position queries report expected positions."""
     settings = create_bantu_like_settings()
     word = Word("at.tam", settings)
 
@@ -41,6 +44,7 @@ def test_word_syllable_position_queries_report_expected_positions():
 
 
 def test_syllable_medial_query_matches_inside_multigraphs():
+    """Test that syllable medial query matches inside multigraphs."""
     settings = create_english_settings()
     syllable = Syllable("asha", settings)
 
@@ -51,6 +55,7 @@ def test_syllable_medial_query_matches_inside_multigraphs():
 
 
 def test_word_highlight_helpers_wrap_whole_words_when_target_graphemes_are_present():
+    """Test that word highlight helpers wrap whole words when target graphemes are present."""
     settings = create_english_settings()
     word = Word("ship", settings)
     graphemes = taught("th", "sh")
@@ -63,6 +68,7 @@ def test_word_highlight_helpers_wrap_whole_words_when_target_graphemes_are_prese
 
 
 def test_word_sight_word_lookup_is_exact_over_display_words():
+    """Test that word sight word lookup is exact over display words."""
     settings = create_english_settings()
     settings.sight_words.add_word("the")
 
@@ -72,6 +78,7 @@ def test_word_sight_word_lookup_is_exact_over_display_words():
 
 
 def test_word_equality_compares_decomposed_grapheme_sequences():
+    """Test that word equality compares decomposed grapheme sequences."""
     settings = create_english_settings()
 
     assert Word("ship", settings).is_same(Word("ship", settings))
@@ -80,6 +87,7 @@ def test_word_equality_compares_decomposed_grapheme_sequences():
 
 
 def test_word_minimal_pair_helpers_identify_single_and_harmony_differences():
+    """Test that word minimal pair helpers identify single and harmony differences."""
     settings = create_english_settings()
     ship = Word("ship", settings)
     shop = Word("shop", settings)
@@ -98,6 +106,7 @@ def test_word_minimal_pair_helpers_identify_single_and_harmony_differences():
 
 
 def test_grapheme_taught_order_preserves_order_and_supports_removal():
+    """Test that grapheme taught order preserves order and supports removal."""
     settings = create_english_settings()
     graphemes_taught = GraphemeTaughtOrder(settings)
 
@@ -114,6 +123,7 @@ def test_grapheme_taught_order_preserves_order_and_supports_removal():
 
 
 def test_sight_words_collection_supports_add_find_and_remove_semantics():
+    """Test that sight words collection supports add, find, and remove semantics."""
     settings = create_english_settings()
     sight_words = SightWords(settings)
 
@@ -128,6 +138,7 @@ def test_sight_words_collection_supports_add_find_and_remove_semantics():
 
 
 def test_word_list_preserves_duplicate_display_words_with_distinct_keys():
+    """Test that word list preserves duplicate display words with distinct keys."""
     settings = create_english_settings()
     word_list = word_list_from_words(settings, "ship", "ship", "shop")
 

@@ -7,6 +7,7 @@ from .fixtures import (
 
 
 def test_text_data_parses_non_english_story_text_into_paragraphs_sentences_and_words():
+    """Test that text data parses non-English story text into paragraphs, sentences, and words."""
     settings = create_bantu_like_settings()
     text_data = text_data_from_paragraphs(
         settings,
@@ -20,6 +21,7 @@ def test_text_data_parses_non_english_story_text_into_paragraphs_sentences_and_w
 
 
 def test_text_data_average_words_in_sentences_averages_paragraph_averages():
+    """Test that text data average words in sentences averages paragraph averages."""
     settings = create_bantu_like_settings()
     text_data = text_data_from_paragraphs(
         settings,
@@ -34,6 +36,7 @@ def test_text_data_average_words_in_sentences_averages_paragraph_averages():
 
 
 def test_text_data_can_build_a_word_list_preserving_duplicate_tokens():
+    """Test that text data can build a word list preserving duplicate tokens."""
     settings = create_bantu_like_settings()
     text_data = text_data_from_paragraphs(settings, "mbata ngoma mbata.")
     word_list = text_data.build_word_list()
@@ -42,6 +45,7 @@ def test_text_data_can_build_a_word_list_preserving_duplicate_tokens():
 
 
 def test_text_data_can_build_a_word_list_with_duplicate_display_words_removed():
+    """Test that text data can build a word list with duplicate display words removed."""
     settings = create_bantu_like_settings()
     text_data = text_data_from_paragraphs(settings, "mbata ngoma mbata.")
     word_list = text_data.build_word_list_with_no_duplicates()
@@ -50,6 +54,7 @@ def test_text_data_can_build_a_word_list_with_duplicate_display_words_removed():
 
 
 def test_frequency_counting_respects_longest_match_grapheme_decomposition():
+    """Test that frequency counting respects longest match grapheme decomposition."""
     settings = create_bantu_like_settings()
     text_data = text_data_from_paragraphs(settings, "mbata ngoma.")
     counted = text_data.update_grapheme_counts(
@@ -73,6 +78,7 @@ def test_frequency_counting_respects_longest_match_grapheme_decomposition():
 
 
 def test_frequency_counting_can_ignore_configured_sight_words():
+    """Test that frequency counting can ignore configured sight words."""
     settings = create_english_settings()
     settings.sight_words.add_word("ship")
     text_data = text_data_from_paragraphs(settings, "ship shop.")
@@ -89,6 +95,7 @@ def test_frequency_counting_can_ignore_configured_sight_words():
 
 
 def test_frequency_counting_can_fold_tones_into_tone_bearing_units():
+    """Test that frequency counting can fold tones into tone bearing units."""
     settings = create_tone_settings()
     text_data = text_data_from_paragraphs(settings, "ma má.")
 

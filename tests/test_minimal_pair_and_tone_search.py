@@ -8,6 +8,7 @@ from .fixtures import (
 
 
 def test_minimal_pair_search_reports_targeted_vowel_contrasts():
+    """Test that minimal pair search reports targeted vowel contrasts."""
     settings = create_english_settings()
     word_list = word_list_from_words(settings, "mat", "mit", "sat")
     search = MinPairsSearch(0, settings)
@@ -22,6 +23,7 @@ def test_minimal_pair_search_reports_targeted_vowel_contrasts():
 
 
 def test_minimal_pair_search_checks_requested_order_even_when_sort_order_differs():
+    """Test that minimal pair search checks requested order even when sort order differs."""
     settings = create_english_settings()
     word_list = word_list_from_words(settings, "bat", "pat")
     search = MinPairsSearch(0, settings)
@@ -36,6 +38,7 @@ def test_minimal_pair_search_checks_requested_order_even_when_sort_order_differs
 
 
 def test_tone_chart_search_reports_configured_tones_levels_and_tone_bearing_units():
+    """Test that tone chart search reports configured tones, levels, and tone bearing units."""
     settings = create_tone_settings()
     search = ToneChartSearch(0, settings)
 
@@ -48,6 +51,7 @@ def test_tone_chart_search_reports_configured_tones_levels_and_tone_bearing_unit
 
 
 def test_tone_pairs_search_reports_tone_contrasts_against_tone_bearing_unit():
+    """Test that tone pairs search reports tone contrasts against tone bearing unit."""
     settings = create_tone_settings()
     word_list = word_list_from_words(settings, "ma", "má", "mi")
     search = TonePairsSearch(0, settings)

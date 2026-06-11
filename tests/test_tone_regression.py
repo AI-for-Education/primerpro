@@ -4,6 +4,7 @@ from .fixtures import create_tone_settings, grapheme_symbols
 
 
 def test_tone_inventory_entries_expose_level_marker_and_tone_bearing_unit():
+    """Test that tone inventory entries expose level, marker, and tone bearing unit."""
     settings = create_tone_settings()
     high = settings.grapheme_inventory.get_tone(
         settings.grapheme_inventory.find_tone_index("á")
@@ -21,6 +22,7 @@ def test_tone_inventory_entries_expose_level_marker_and_tone_bearing_unit():
 
 
 def test_word_tone_helpers_strip_tones_to_tone_bearing_units():
+    """Test that word tone helpers strip tones to tone bearing units."""
     settings = create_tone_settings()
     word = Word("má", settings)
 
@@ -32,6 +34,7 @@ def test_word_tone_helpers_strip_tones_to_tone_bearing_units():
 
 
 def test_minimal_pair_helpers_can_ignore_tone_bearing_differences():
+    """Test that minimal pair helpers can ignore tone bearing differences."""
     settings = create_tone_settings()
     inventory = settings.grapheme_inventory
     plain = Word("ma", settings)

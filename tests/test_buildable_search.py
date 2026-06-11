@@ -4,6 +4,7 @@ from .fixtures import create_bantu_like_settings, taught, word_list_from_words
 
 
 def test_buildable_word_list_search_includes_only_words_whose_graphemes_are_taught():
+    """Test that buildable word list search only includes words whose graphemes are all taught."""
     settings = create_bantu_like_settings()
     word_list = word_list_from_words(settings, "mbata", "kaana", "ngoma", "tap")
     search = BuildableWordSearchWL(1, settings)
@@ -20,6 +21,7 @@ def test_buildable_word_list_search_includes_only_words_whose_graphemes_are_taug
 
 
 def test_buildable_word_list_search_handles_positional_taught_graphemes():
+    """Test that buildable word list search correctly handles positional taught graphemes (initial/final markers)."""
     settings = create_bantu_like_settings()
     word_list = word_list_from_words(settings, "ta", "at", "ata", "ta.na")
     search = BuildableWordSearchWL(1, settings)
@@ -36,6 +38,7 @@ def test_buildable_word_list_search_handles_positional_taught_graphemes():
 
 
 def test_buildable_word_list_search_reports_no_results_for_an_empty_decodable_set():
+    """Test that buildable word list search reports 'No Results' when no words are decodable."""
     settings = create_bantu_like_settings()
     word_list = word_list_from_words(settings, "mbata", "ngoma")
     search = BuildableWordSearchWL(1, settings)

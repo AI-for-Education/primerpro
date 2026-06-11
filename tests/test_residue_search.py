@@ -9,6 +9,7 @@ from .fixtures import (
 
 
 def test_residue_search_counts_words_that_are_not_buildable_from_taught_graphemes():
+    """Test that residue search counts words that are not buildable from taught graphemes."""
     settings = create_bantu_like_settings()
     text_data = text_data_from_paragraphs(settings, "mbata ngoma kaana.")
     search = ResidueSearch(1, settings)
@@ -21,6 +22,7 @@ def test_residue_search_counts_words_that_are_not_buildable_from_taught_grapheme
 
 
 def test_residue_search_can_ignore_configured_sight_words():
+    """Test that residue search can ignore configured sight words."""
     settings = create_bantu_like_settings()
     settings.sight_words.add_word("ngoma")
     text_data = text_data_from_paragraphs(settings, "mbata ngoma kaana.")
@@ -34,6 +36,7 @@ def test_residue_search_can_ignore_configured_sight_words():
 
 
 def test_residue_search_can_append_reading_level_story_metrics():
+    """Test that residue search can append reading level story metrics."""
     settings = create_bantu_like_settings()
     text_data = text_data_from_paragraphs(settings, "mbata ngoma. kaana ta.")
     search = ResidueSearch(1, settings)

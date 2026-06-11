@@ -9,6 +9,7 @@ from .fixtures import (
 
 
 def test_spanish_style_inventory_decomposes_ch_ll_rr_qu_and_gu_as_graphemes():
+    """Test that Spanish style inventory decomposes ch, ll, rr, qu, and gu as graphemes."""
     settings = create_spanish_like_settings()
 
     assert_word(settings, "queso", ["qu", "e", "s", "o"])
@@ -19,6 +20,7 @@ def test_spanish_style_inventory_decomposes_ch_ll_rr_qu_and_gu_as_graphemes():
 
 
 def test_spanish_style_inventory_prefers_qu_and_gu_over_component_letters():
+    """Test that Spanish style inventory prefers qu and gu over component letters."""
     settings = create_spanish_like_settings()
 
     assert_word(settings, "quema", ["qu", "e", "m", "a"])
@@ -27,6 +29,7 @@ def test_spanish_style_inventory_prefers_qu_and_gu_over_component_letters():
 
 
 def test_spanish_style_uppercase_multigraphs_are_exact():
+    """Test that Spanish style uppercase multigraphs require exact casing."""
     settings = create_spanish_like_settings()
 
     assert grapheme_symbols(Word("QUEso", settings)) == ["qu", "e", "s", "o"]
@@ -34,6 +37,7 @@ def test_spanish_style_uppercase_multigraphs_are_exact():
 
 
 def test_spanish_style_decodability_requires_taught_multigraph_graphemes():
+    """Test that Spanish style decodability requires taught multigraph graphemes."""
     settings = create_spanish_like_settings()
     queso = Word("queso", settings)
     llama = Word("llama", settings)
@@ -48,6 +52,7 @@ def test_spanish_style_decodability_requires_taught_multigraph_graphemes():
 
 
 def test_spanish_style_staged_decodability_handles_qu_ch_ll_rr_and_gu():
+    """Test that Spanish style staged decodability handles qu, ch, ll, rr, and gu."""
     settings = create_spanish_like_settings()
     simple = taught("c", "a", "s", "o", "p", "e", "r", "t", "g")
     qu_ch = taught("c", "a", "s", "o", "p", "e", "r", "t", "g", "qu", "ch", "i")
@@ -80,6 +85,7 @@ def test_spanish_style_staged_decodability_handles_qu_ch_ll_rr_and_gu():
 
 
 def test_spanish_style_text_data_counts_story_structure_and_unique_words():
+    """Test that Spanish style text data counts story structure and unique words correctly."""
     settings = create_spanish_like_settings()
     text_data = text_data_from_paragraphs(
         settings,
@@ -95,6 +101,7 @@ def test_spanish_style_text_data_counts_story_structure_and_unique_words():
 
 
 def test_spanish_style_frequency_counts_use_decomposed_multigraph_graphemes():
+    """Test that Spanish style frequency counts use decomposed multigraph graphemes."""
     settings = create_spanish_like_settings()
     text_data = text_data_from_paragraphs(
         settings,
