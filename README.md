@@ -1,6 +1,6 @@
 # PrimerPro Python Port
 
-This package ports the core PrimerPro decodability objects and searches to
+This package ports the core [PrimerPro](https://github.com/sillsdev/PrimerPro) decodability objects and searches to
 Python. PrimerPro is a primer-development tool: it helps a literacy worker
 answer practical questions such as which words are buildable from the graphemes
 already taught, which story words still contain untaught residue, and which
