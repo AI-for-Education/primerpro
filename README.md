@@ -1,5 +1,8 @@
 # PrimerPro Python Port
 
+[![CI](https://github.com/AI-for-Education/primerpro/actions/workflows/ci.yml/badge.svg)](https://github.com/AI-for-Education/primerpro/actions/workflows/ci.yml)
+[![Coverage](https://codecov.io/gh/AI-for-Education/primerpro/branch/main/graph/badge.svg)](https://codecov.io/gh/AI-for-Education/primerpro)
+
 This package ports the core [PrimerPro](https://github.com/sillsdev/PrimerPro) decodability objects and searches to
 Python. PrimerPro is a primer-development tool: it helps a literacy worker
 answer practical questions such as which words are buildable from the graphemes
