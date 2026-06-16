@@ -14,6 +14,7 @@ authors = [
 ]
 maintainers = [
     {name = "Moritz Boos", email = "moritz.boos@fabinc.co.uk"},
+    {name = "Suzin You", email = "suzin.you@idinsight.org"}
 ]
 keywords = [
     "literacy",
